@@ -1,0 +1,9 @@
+﻿@model IEnumerable<QAForum.Models.Thread>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Message</h2>
+
+   @Html.Partial("PartialThreadList")

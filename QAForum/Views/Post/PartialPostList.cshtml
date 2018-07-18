@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QAForum.Models.Post>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Post")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThreadID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostBody)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThreadID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostBody)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Post", new { id = item.ThreadID }, null) |
+            @Html.ActionLink("Details", "Details", "Post", new { id = item.ThreadID }, null) |
+            @Html.ActionLink("Delete", "Delete", "Post", new { id = item.ThreadID }, null)
+        </td>
+    </tr>
+}
+
+</table>
